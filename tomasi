@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Composer | Vodo Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root { --vodo-neon: #ccff00; } /* Official Vodo Neon Lime */
+        body { background-color: #000000; color: #ffffff; font-family: 'Inter', sans-serif; }
+        .vodo-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; }
+        .hero-text { font-family: 'Orbitron', sans-serif; letter-spacing: -3px; }
+        
+        /* Neon Floating Button Effect */
+        .neon-btn {
+            position: relative;
+            background: var(--vodo-neon);
+            color: black;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+        }
+        .neon-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 0 40px rgba(204, 255, 0, 0.8);
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(204, 255, 0, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(204, 255, 0, 0.6); }
+        }
+        .animate-pulse-slow { animation: pulse-glow 3s infinite; }
+    </style>
+</head>
+<body class="p-6 md:p-16">
+
+    <nav class="max-w-7xl mx-auto flex justify-between items-center mb-24">
+        <div class="text-2xl font-black tracking-tighter">VODO<span class="text-[#ccff00]">.</span></div>
+        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-500">
+            <a href="#work" class="hover:text-white transition">Portfolio</a>
+            <a href="#contact" class="hover:text-white transition">Contact</a>
+        </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto mb-40">
+        <h1 class="hero-text text-7xl md:text-[10rem] leading-none mb-8">AI <br><span class="text-[#ccff00]">DESIGNER.</span></h1>
+        <p class="text-gray-400 text-xl md:text-2xl max-w-xl font-light">Crafting the next generation of Fijian digital tools through the lens of AI and visual engineering.</p>
+    </header>
+
+    <section id="work" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mb-40">
+        <div class="vodo-glass p-10 hover:border-[#ccff00] transition-all duration-500 group">
+            <div class="flex justify-between items-center mb-8">
+                <div class="px-4 py-1 rounded-full border border-[#ccff00] text-[#ccff00] text-[10px] font-bold uppercase">Flagship Project</div>
+                <div class="text-gray-600 group-hover:text-white transition">2026</div>
+            </div>
+            <h3 class="text-5xl font-black mb-4">VODO TAXI</h3>
+            <p class="text-gray-500 mb-10 text-lg">A full-stack taxi meter solution built for the Fiji transport industry. Precision GPS tracking meets high-end dark mode aesthetics.</p>
+            <div class="flex gap-4">
+                <span class="text-xs text-gray-400">REACT</span>
+                <span class="text-xs text-gray-400">CAPACITOR</span>
+                <span class="text-xs text-gray-400">GPS-ENGINES</span>
+            </div>
+        </div>
+
+        <div class="vodo-glass p-10 hover:border-[#ccff00] transition-all duration-500 group">
+            <div class="flex justify-between items-center mb-8">
+                <div class="px-4 py-1 rounded-full border border-gray-800 text-gray-500 text-[10px] font-bold uppercase">Web App</div>
+                <div class="text-gray-600 group-hover:text-white transition">2025</div>
+            </div>
+            <h3 class="text-5xl font-black mb-4 uppercase">Lyrics Pro</h3>
+            <p class="text-gray-500 mb-10 text-lg">An immersive musical experience that converts audio data into visual art in real-time. Hosted on GitHub infrastructure.</p>
+            <div class="flex gap-4">
+                <span class="text-xs text-gray-400">VITE</span>
+                <span class="text-xs text-gray-400">AI-GEN</span>
+                <span class="text-xs text-gray-400">GH-PAGES</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="max-w-7xl mx-auto py-32 text-center border-t border-gray-900">
+        <h2 class="text-4xl md:text-6xl font-black mb-8 uppercase">Ready to start <br>your next <span class="text-[#ccff00]">AI project?</span></h2>
+        <p class="text-gray-500 mb-12 text-lg">Available for web composing and graphic design inquiries.</p>
+        
+        <div class="inline-block">
+            <a href="mailto:your-email@example.com" class="neon-btn px-12 py-5 rounded-full inline-flex items-center gap-3 animate-pulse-slow">
+                Connect Now
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <footer class="text-center py-20 text-gray-700 text-[10px] uppercase tracking-[0.5em]">
+        Design & Code by You • © 2026
+    </footer>
+
+</body>
+</html>
