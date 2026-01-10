@@ -3,98 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Composer | Vodo Design</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <title>Digital Fiji | App Testing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --vodo-neon: #ccff00; } /* Official Vodo Neon Lime */
-        body { background-color: #000000; color: #ffffff; font-family: 'Inter', sans-serif; }
-        .vodo-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; }
-        .hero-text { font-family: 'Orbitron', sans-serif; letter-spacing: -3px; }
-        
-        /* Neon Floating Button Effect */
-        .neon-btn {
-            position: relative;
-            background: var(--vodo-neon);
-            color: black;
-            font-weight: 900;
+        :root {
+            --primary: #007AFF;
+            --accent: #00d2ff;
+            --bg: #f5f7fa;
+            --text: #1d1d1f;
+            --card-bg: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 90%;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 { font-weight: 800; font-size: 2rem; margin-bottom: 10px; }
+        p.subtitle { color: #666; line-height: 1.6; font-size: 0.95rem; }
+
+        .section-title {
             text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin: 30px 0 15px;
+            color: var(--primary);
+            font-weight: 700;
         }
-        .neon-btn:hover {
-            transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 0 40px rgba(204, 255, 0, 0.8);
+
+        /* Glassmorphism Card Style */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
         }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 15px rgba(204, 255, 0, 0.4); }
-            50% { box-shadow: 0 0 30px rgba(204, 255, 0, 0.6); }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
-        .animate-pulse-slow { animation: pulse-glow 3s infinite; }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        .btn {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn:active { transform: scale(0.98); }
+
+        .app-icon { font-size: 2rem; margin-bottom: 10px; }
+        
+        footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .fiji-flag {
+            font-size: 1.2rem;
+            margin-left: 5px;
+        }
     </style>
 </head>
-<body class="p-6 md:p-16">
+<body>
 
-    <nav class="max-w-7xl mx-auto flex justify-between items-center mb-24">
-        <div class="text-2xl font-black tracking-tighter">VODO<span class="text-[#ccff00]">.</span></div>
-        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-500">
-            <a href="#work" class="hover:text-white transition">Portfolio</a>
-            <a href="#contact" class="hover:text-white transition">Contact</a>
-        </div>
-    </nav>
-
-    <header class="max-w-7xl mx-auto mb-40">
-        <h1 class="hero-text text-7xl md:text-[10rem] leading-none mb-8">AI <br><span class="text-[#ccff00]">DESIGNER.</span></h1>
-        <p class="text-gray-400 text-xl md:text-2xl max-w-xl font-light">Crafting the next generation of Fijian digital tools through the lens of AI and visual engineering.</p>
+<div class="container">
+    <header>
+        <div class="profile-img">TK</div>
+        <h1>Bula Vinaka! 🇫🇯</h1>
+        <p class="subtitle">I'm a graphic designer in Fiji building digital tools for our people. Help me test my latest apps before they launch!</p>
     </header>
 
-    <section id="work" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mb-40">
-        <div class="vodo-glass p-10 hover:border-[#ccff00] transition-all duration-500 group">
-            <div class="flex justify-between items-center mb-8">
-                <div class="px-4 py-1 rounded-full border border-[#ccff00] text-[#ccff00] text-[10px] font-bold uppercase">Flagship Project</div>
-                <div class="text-gray-600 group-hover:text-white transition">2026</div>
-            </div>
-            <h3 class="text-5xl font-black mb-4">VODO TAXI</h3>
-            <p class="text-gray-500 mb-10 text-lg">A full-stack taxi meter solution built for the Fiji transport industry. Precision GPS tracking meets high-end dark mode aesthetics.</p>
-            <div class="flex gap-4">
-                <span class="text-xs text-gray-400">REACT</span>
-                <span class="text-xs text-gray-400">CAPACITOR</span>
-                <span class="text-xs text-gray-400">GPS-ENGINES</span>
-            </div>
-        </div>
+    <div class="section-title">Required First Step</div>
+    <div class="card">
+        <h3><span class="step-number">1</span> Join the Group</h3>
+        <p style="font-size: 0.85rem; color: #555;">Google requires you to be in the testing group to see the links below.</p>
+        <a href="https://groups.google.com/g/app-tk" class="btn btn-main" target="_blank">Join Google Group</a>
+    </div>
 
-        <div class="vodo-glass p-10 hover:border-[#ccff00] transition-all duration-500 group">
-            <div class="flex justify-between items-center mb-8">
-                <div class="px-4 py-1 rounded-full border border-gray-800 text-gray-500 text-[10px] font-bold uppercase">Web App</div>
-                <div class="text-gray-600 group-hover:text-white transition">2025</div>
-            </div>
-            <h3 class="text-5xl font-black mb-4 uppercase">Lyrics Pro</h3>
-            <p class="text-gray-500 mb-10 text-lg">An immersive musical experience that converts audio data into visual art in real-time. Hosted on GitHub infrastructure.</p>
-            <div class="flex gap-4">
-                <span class="text-xs text-gray-400">VITE</span>
-                <span class="text-xs text-gray-400">AI-GEN</span>
-                <span class="text-xs text-gray-400">GH-PAGES</span>
-            </div>
-        </div>
-    </section>
+    <div class="section-title">My Apps</div>
 
-    <section id="contact" class="max-w-7xl mx-auto py-32 text-center border-t border-gray-900">
-        <h2 class="text-4xl md:text-6xl font-black mb-8 uppercase">Ready to start <br>your next <span class="text-[#ccff00]">AI project?</span></h2>
-        <p class="text-gray-500 mb-12 text-lg">Available for web composing and graphic design inquiries.</p>
-        
-        <div class="inline-block">
-            <a href="mailto:your-email@example.com" class="neon-btn px-12 py-5 rounded-full inline-flex items-center gap-3 animate-pulse-slow">
-                Connect Now
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-            </a>
-        </div>
-    </section>
+    <div class="card">
+        <div class="app-icon">🎨</div>
+        <h3>Muse App</h3>
+        <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">A space for Fiji's creative minds.</p>
+        <a href="https://play.google.com/apps/testing/com.tomasikororua.muse" class="btn btn-outline" target="_blank">1. Register as Tester</a>
+        <a href="https://play.google.com/store/apps/details?id=com.tomasikororua.muse" class="btn btn-main" target="_blank">2. Download Android App</a>
+    </div>
 
-    <footer class="text-center py-20 text-gray-700 text-[10px] uppercase tracking-[0.5em]">
-        Design & Code by You • © 2026
+    <div class="card">
+        <div class="app-icon">🚕</div>
+        <h3>Vodo App</h3>
+        <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">Smart transport for our islands.</p>
+        <a href="https://play.google.com/apps/testing/com.vodo.taxi" class="btn btn-outline" target="_blank">1. Register as Tester</a>
+        <a href="https://play.google.com/store/apps/details?id=com.vodo.taxi" class="btn btn-main" target="_blank">2. Download Android App</a>
+    </div>
+
+    <footer>
+        <p>Made with 💙 in Fiji <br> &copy; 2024 Tomasikororua Design</p>
     </footer>
+</div>
 
 </body>
 </html>
