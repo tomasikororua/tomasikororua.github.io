@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Fiji | App Testing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #007AFF;
-            --accent: #00d2ff;
             --bg: #f5f7fa;
             --text: #1d1d1f;
-            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-bg: rgba(255, 255, 255, 0.85);
         }
 
         body {
@@ -22,19 +21,14 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 500px;
+            max-width: 480px;
             width: 90%;
             margin: 40px auto;
             text-align: center;
-        }
-
-        header {
-            margin-bottom: 40px;
         }
 
         .profile-img {
@@ -47,17 +41,16 @@
             margin: 0 auto 20px;
             border: 4px solid white;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            display: block;
         }
 
-        h1 { font-weight: 800; font-size: 2rem; margin-bottom: 10px; }
-        p.subtitle { color: #666; line-height: 1.6; font-size: 0.95rem; }
+        h1 { font-weight: 800; font-size: 1.8rem; margin-bottom: 10px; }
+        .subtitle { color: #555; line-height: 1.5; font-size: 0.95rem; margin-bottom: 30px; }
 
         .section-title {
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 2px;
-            margin: 30px 0 15px;
+            margin: 25px 0 15px;
             color: var(--primary);
             font-weight: 700;
         }
@@ -66,56 +59,39 @@
             background: var(--card-bg);
             backdrop-filter: blur(10px);
             border-radius: 24px;
-            padding: 25px;
+            padding: 24px;
             margin-bottom: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
-        .step-number {
-            background: var(--primary);
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            margin-right: 8px;
+        .app-icon-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            object-fit: cover;
         }
+
+        h3 { margin: 10px 0 5px; font-size: 1.3rem; }
+        .desc { font-size: 0.85rem; color: #666; margin-bottom: 20px; line-height: 1.4; }
 
         .btn {
             display: block;
-            padding: 15px;
+            padding: 14px;
             margin: 10px 0;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.2s;
+            font-size: 0.9rem;
+            transition: 0.2s;
         }
 
-        .btn-main {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
+        .btn-main { background: var(--primary); color: white; }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
         .btn:active { transform: scale(0.98); }
 
-        .app-icon { font-size: 2rem; margin-bottom: 10px; }
-        
-        footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #888;
-        }
+        footer { margin-top: 40px; font-size: 0.75rem; color: #888; padding-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -124,30 +100,32 @@
     <header>
         <div class="profile-img"></div>
         <h1>Bula Vinaka! 🇫🇯</h1>
-        <p class="subtitle">I'm a visual designer in Fiji. Join my testing group to help me bring Fiji into the digital age with these new apps.</p>
+        <p class="subtitle">I'm a local designer building apps to help the people of Fiji. Join my testing group to try them out!</p>
     </header>
 
-    <div class="section-title">Required First Step</div>
+    <div class="section-title">Step 1: Get Access</div>
     <div class="card">
-        <h3><span class="step-number">1</span> Join the Group</h3>
-        <p style="font-size: 0.85rem; color: #555;">You must be a member to access the downloads.</p>
-        <a href="https://groups.google.com/g/app-tk" class="btn btn-main" target="_blank">Join Google Group</a>
+        <h3>Join the Group</h3>
+        <p class="desc">Google Play requires you to join this group first to see the app links.</p>
+        <a href="https://groups.google.com/g/app-tk" class="btn btn-main" target="_blank">Join Testing Group</a>
     </div>
 
-    <div class="section-title">My Apps</div>
+    <div class="section-title">Step 2: My Local Apps</div>
 
     <div class="card">
-        <div class="app-icon">🎨</div>
+        <img src="https://raw.githubusercontent.com/tomasikororua/tomasikororua.github.io/main/muse-icon.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3505/3505419.png'" class="app-icon-img" alt="Muse">
         <h3>Muse App</h3>
+        <p class="desc">A lyric saving app for local artists, featuring an auto-scroll mode for easier practice and performance.</p>
         <a href="https://play.google.com/apps/testing/com.tomasikororua.muse" class="btn btn-outline" target="_blank">1. Register as Tester</a>
-        <a href="https://play.google.com/store/apps/details?id=com.tomasikororua.muse" class="btn btn-main" target="_blank">2. Download Android App</a>
+        <a href="https://play.google.com/store/apps/details?id=com.tomasikororua.muse" class="btn btn-main" target="_blank">2. Download App</a>
     </div>
 
     <div class="card">
-        <div class="app-icon">🚕</div>
+        <img src="https://raw.githubusercontent.com/tomasikororua/tomasikororua.github.io/main/vodo-icon.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2898/2898588.png'" class="app-icon-img" alt="Vodo">
         <h3>Vodo App</h3>
+        <p class="desc">The first Fijian taxi meter app, designed to make local travel fair and transparent for everyone.</p>
         <a href="https://play.google.com/apps/testing/com.vodo.taxi" class="btn btn-outline" target="_blank">1. Register as Tester</a>
-        <a href="https://play.google.com/store/apps/details?id=com.vodo.taxi" class="btn btn-main" target="_blank">2. Download Android App</a>
+        <a href="https://play.google.com/store/apps/details?id=com.vodo.taxi" class="btn btn-main" target="_blank">2. Download App</a>
     </div>
 
     <footer>
